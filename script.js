@@ -59,7 +59,7 @@ const csvString =
 //Part 2
 
 let rows = csvString.split('\n');
-console.log(rows);
+// console.log(rows);
 
 // Making array 2 dimensinal
 for (i = 0; i < rows.length; i++) {
@@ -72,7 +72,7 @@ for (i = 0; i < rows.length; i++) {
     let cell = rows[i].split(",");
     rowArray[i] = cell;
 }
-console.log(rowArray);
+// console.log(rowArray);
 
 const headers = rowArray[0];
 
@@ -88,6 +88,17 @@ for (let i = 1; i < rowArray.length; i++) {
     }
 
     objArray.push(obj);
-}
 
+}
+const removedLine = objArray.pop(-1);
+
+const newData1 = { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+
+objArray.splice(1, 0, newData1);
+
+const newData2 = { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+
+objArray.push(newData2);
+
+// console.log(removedLine);
 console.log(objArray);
