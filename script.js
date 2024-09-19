@@ -1,6 +1,6 @@
 // Part 3: Feeling Loopy
 
-const csvString =
+let csvString =
   `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26`;
 
 // const csvString =
@@ -100,5 +100,20 @@ const newData2 = { id: "7", name: "Bilbo", occupation: "None", age: "111" }
 
 objArray.push(newData2);
 
-// console.log(removedLine);
 console.log(objArray);
+
+const people = objArray;
+
+let totalAge = 0;
+
+for (const person of people) {
+    totalAge += parseInt(person.age);
+}
+
+const averageAge = totalAge / people.length;
+
+console.log(`Average age: ${averageAge}`);
+
+csvString = people.map(person => `${person.id},${person.name},${person.occupation},${person.age}`).join('\n');
+
+console.log(csvString);
